@@ -1,0 +1,43 @@
+<html> 
+<body> 
+<h2>Form Input Sebaran Faskes</h2> 
+ 
+<form action="input.php" onsubmit="return validateForm()" method="post"> 
+   <label for="nama_faskes">Nama Faskes:</label><br> 
+   <input type="text" id="nama_faskes" name="nama_faskes" value=""><br> 
+
+   <label for="kalurahan">Kalurahan:</label><br> 
+   <input type="text" id="kalurahan" name="kalurahan" value=""><br> 
+
+   <label for="kecamatan">Kecamatan:</label><br> 
+   <input type="text" id="kecamatan" name="kecamatan" value=""><br> 
+
+   <label for="jam_buka">Jam Buka:</label><br> 
+   <input type="text" id="jam_buka" name="jam_buka" value=""><br> 
+
+   <label for="longitude">Longitude:</label><br> 
+   <input type="text" id="longitude" name="longitude" value=""><br> 
+
+   <label for="latitude">Latitude:</label><br> 
+   <input type="text" id="latitude" name="latitude" value=""><br><br> 
+
+   <input type="submit" value="Submit"> 
+</form>   
+ 
+<p id="informasi" style="color: red;"></p> 
+ 
+<script> 
+  function validateForm() { 
+    let longitude = document.getElementById("longitude").value; 
+    let latitude = document.getElementById("latitude").value; 
+    let text = ""; 
+
+    if (isNaN(longitude) || isNaN(latitude)) { 
+        text = "Longitude dan Latitude harus berupa angka!"; 
+        event.preventDefault(); 
+    }  
+    document.getElementById("informasi").innerHTML = text; 
+  } 
+</script> 
+</body> 
+</html>
